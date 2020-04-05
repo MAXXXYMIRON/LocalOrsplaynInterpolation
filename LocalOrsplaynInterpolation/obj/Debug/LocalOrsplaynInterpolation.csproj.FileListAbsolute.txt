@@ -1,0 +1,10 @@
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\bin\Debug\LocalOrsplaynInterpolation.exe.config
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\bin\Debug\LocalOrsplaynInterpolation.exe
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\bin\Debug\LocalOrsplaynInterpolation.pdb
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\obj\Debug\LocalOrsplaynInterpolation.csprojAssemblyReference.cache
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\obj\Debug\LocalOrsplaynInterpolation.Form1.resources
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\obj\Debug\LocalOrsplaynInterpolation.Properties.Resources.resources
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\obj\Debug\LocalOrsplaynInterpolation.csproj.GenerateResource.cache
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\obj\Debug\LocalOrsplaynInterpolation.csproj.CoreCompileInputs.cache
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\obj\Debug\LocalOrsplaynInterpolation.exe
+D:\Learning\Vich Math\LocalOrsplaynInterpolation\LocalOrsplaynInterpolation\obj\Debug\LocalOrsplaynInterpolation.pdb
