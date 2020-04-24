@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LocalOrsplaynInterpolation
 {
+    /// <summary>
+    /// Точка
+    /// </summary>
     public class Point
     {
         public double x { get; set; }
@@ -17,6 +20,9 @@ namespace LocalOrsplaynInterpolation
         }
     }
 
+    /// <summary>
+    /// Мн-во точек
+    /// </summary>
     public class SequencePoints : List<Point>
     {
         public SequencePoints() : base() { }
@@ -58,7 +64,9 @@ namespace LocalOrsplaynInterpolation
 
     }
 
-
+    /// <summary>
+    /// Метод сплайна
+    /// </summary>
     static class Splayn
     {
         static double[] a;
@@ -78,7 +86,7 @@ namespace LocalOrsplaynInterpolation
             c = new double[n - 1];
             z = new double[n];
 
-            z[0] = 0;
+            z[0] = 0.1;
 
 
             //K[0] - Zk-1

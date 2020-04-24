@@ -14,6 +14,10 @@ namespace LocalOrsplaynInterpolation
 {
     public partial class Form1 : Form
     {
+
+        /// <summary>
+        /// По условию задачи
+        /// </summary>
         SequencePoints Given = new SequencePoints {
             new Point(-1.2, 3.38688),
             new Point(-0.6, -4.35456),
@@ -24,6 +28,10 @@ namespace LocalOrsplaynInterpolation
 
         SequencePoints Points = new SequencePoints(6);
 
+        /// <summary>
+        /// Сортировка введенных точек по х
+        /// </summary>
+        /// <param name="points"></param>
         void Sort(SequencePoints points)
         {
             double temp = 0;
@@ -42,6 +50,9 @@ namespace LocalOrsplaynInterpolation
         Bitmap[] BitmapsScales = new Bitmap[CountScales];
         Graphics Draw;
 
+        /// <summary>
+        /// Возможные размеры координатной оси
+        /// </summary>
         int[] scales = new int[CountScales]
             {2, 3, 5, 6, 10, 12, 15, 20, 24, 25, 30, 40, 50, 60, 75, 100, 150, 200, 300, 600};
         byte s = 10;
@@ -54,11 +65,16 @@ namespace LocalOrsplaynInterpolation
         Point Center;
         double TempCenter = 0;
 
-
+        /// <summary>
+        /// Перо для: координатной сетки, графика, и осей
+        /// </summary>
         Pen LinesPen = new Pen(Color.Black, 1),
             GraphPen = new Pen(Color.Yellow, 1),
             CenterPen = new Pen(Color.Red, 2);
 
+        /// <summary>
+        /// Создание координатых сеток разных размеров
+        /// </summary>
         void MakeBitmaps()
         {
             for(int j = 0; j < scales.Length; j++)
@@ -95,7 +111,9 @@ namespace LocalOrsplaynInterpolation
         }
 
 
-
+        /// <summary>
+        /// Рисование всей картины
+        /// </summary>
         private void DrawGraphics(Graphics Draw)
         {
             Bitmap Graph = new Bitmap(BitmapsScales[scaleIndex]);
@@ -107,6 +125,9 @@ namespace LocalOrsplaynInterpolation
             BitmapGraph.BackgroundImage = Graph;
         }
 
+        /// <summary>
+        /// Рисование графика с помощью сплайна
+        /// </summary>
         private void DrawSplayn(Bitmap Graph, Graphics Draw, SequencePoints points)
         {
             float
@@ -146,6 +167,9 @@ namespace LocalOrsplaynInterpolation
             }
         }
 
+        /// <summary>
+        /// Рисование осей
+        /// </summary>
         private void DrawCenters(Bitmap Graph, Graphics Draw)
         {
             Draw.DrawLine(CenterPen, (float)Center.x, 0, (float)Center.x, BitmapGraph.Height);
@@ -153,7 +177,9 @@ namespace LocalOrsplaynInterpolation
             Draw.DrawLine(CenterPen, 0, (float)Center.y, BitmapGraph.Width, (float)Center.y);
         }
 
-
+        /// <summary>
+        /// Позиционирование координатных осей
+        /// </summary>
         void OptioningScrolls()
         {
             ScrollH.SmallChange = ScrollH.LargeChange =
@@ -162,8 +188,10 @@ namespace LocalOrsplaynInterpolation
             ScrollH.Value = (int)(Center.x = Center.x - (Center.x % scales[scaleIndex]));
             ScrollV.Value = (int)(Center.y = Center.y - (Center.y % scales[scaleIndex]));
         }
-        
 
+        /// <summary>
+        /// Увеличение размера
+        /// </summary>
         private void pl_Click(object sender, EventArgs e)
         {
             scaleIndex++;
@@ -173,6 +201,9 @@ namespace LocalOrsplaynInterpolation
             DrawGraphics(Draw);
         }
 
+        /// <summary>
+        /// Уменьшение размера
+        /// </summary>
         private void mn_Click(object sender, EventArgs e)
         {
             scaleIndex--;
@@ -182,6 +213,9 @@ namespace LocalOrsplaynInterpolation
             DrawGraphics(Draw);
         }
 
+        /// <summary>
+        /// Перемещение координатной оси
+        /// </summary>
         private void ScrollV_Scroll(object sender, ScrollEventArgs e)
         {
             TempCenter = Center.y;
@@ -189,6 +223,9 @@ namespace LocalOrsplaynInterpolation
             if(TempCenter != Center.y) DrawGraphics(Draw);
         }
 
+        /// <summary>
+        /// Перемещение координатной оси
+        /// </summary>
         private void ScrollH_Scroll(object sender, ScrollEventArgs e)
         {
             TempCenter = Center.x;
@@ -196,6 +233,9 @@ namespace LocalOrsplaynInterpolation
             if(TempCenter != Center.x) DrawGraphics(Draw);
         }
 
+        /// <summary>
+        /// Чертить график
+        /// </summary>
         private void SplaynRun_Click(object sender, EventArgs e)
         {
             if (Points.Count == 0) return;
